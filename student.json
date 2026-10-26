@@ -1,0 +1,8 @@
+[
+  { "no": "2024001", "ad": "Ahmet",  "soyad": "Yılmaz", "bolum": "Bilgisayar Teknolojileri", "program": "Ön-Yüz Yazılım Geliştirme", "sinif": "1" },
+  { "no": "2024002", "ad": "Elif",   "soyad": "Demir",  "bolum": "Bilgisayar Teknolojileri", "program": "Ön-Yüz Yazılım Geliştirme", "sinif": "1" },
+  { "no": "2024003", "ad": "Mustafa","soyad": "Kaya",   "bolum": "Bilgisayar Teknolojileri", "program": "Ön-Yüz Yazılım Geliştirme", "sinif": "2" },
+  { "no": "2024004", "ad": "Zeynep", "soyad": "Şahin",  "bolum": "Bilgisayar Teknolojileri", "program": "Ön-Yüz Yazılım Geliştirme", "sinif": "2" },
+  { "no": "2024005", "ad": "Mert",   "soyad": "Aydın",  "bolum": "Bilgisayar Teknolojileri", "program": "Ön-Yüz Yazılım Geliştirme", "sinif": "1" },
+  { "no": "2024006", "ad": "Selin",  "soyad": "Çelik",  "bolum": "Bilgisayar Teknolojileri", "program": "Ön-Yüz Yazılım Geliştirme", "sinif": "2" }
+]

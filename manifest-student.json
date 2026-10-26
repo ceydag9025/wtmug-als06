@@ -1,0 +1,16 @@
+{
+  "name": "Öğrenci — Sesli QR Yoklama",
+  "short_name": "Öğr. Yoklama",
+  "description": "Ses dalgasından DTMF kodunu çözüp QR üreten öğrenci uygulaması.",
+  "start_url": "./student.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b1220",
+  "theme_color": "#0ea5e9",
+  "lang": "tr",
+  "icons": [
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+  ]
+}

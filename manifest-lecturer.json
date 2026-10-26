@@ -1,0 +1,16 @@
+{
+  "name": "Hoca — Sesli QR Yoklama",
+  "short_name": "Hoca Yoklama",
+  "description": "DTMF ses yayını yapan ve QR okuyan hoca uygulaması.",
+  "start_url": "./lecturer.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b1220",
+  "theme_color": "#0ea5e9",
+  "lang": "tr",
+  "icons": [
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+  ]
+}

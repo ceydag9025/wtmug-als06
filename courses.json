@@ -1,0 +1,6 @@
+[
+  { "kod": "WTM101", "ad": "Web Tabanlı Mobil Uygulama Geliştirme", "ogrenciler": ["2024001", "2024002", "2024003", "2024004", "2024005"] },
+  { "kod": "WTM102", "ad": "İnternet Programcılığı",                "ogrenciler": ["2024001", "2024002", "2024006"] },
+  { "kod": "WTM103", "ad": "Veritabanı Yönetim Sistemleri",         "ogrenciler": ["2024003", "2024004", "2024005", "2024006"] },
+  { "kod": "WTM104", "ad": "Görsel Programlama",                    "ogrenciler": ["2024001", "2024003", "2024005", "2024006"] }
+]

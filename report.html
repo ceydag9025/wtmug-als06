@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>Rapor • Sesli QR Yoklama</title>
+<meta name="theme-color" content="#0ea5e9" />
+<link rel="manifest" href="manifest-lecturer.json" />
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="app.css" />
+</head>
+<body>
+<header class="top">
+  <h1>📊 Rapor</h1>
+  <a class="btn ghost sm" href="lecturer.html">← Hoca</a>
+</header>
+
+<main class="wrap" style="max-width:1100px">
+  <section class="card">
+    <div class="row">
+      <div style="flex:1;min-width:200px">
+        <label class="lbl" for="courseSel">Ders</label>
+        <select id="courseSel" class="inp"></select>
+      </div>
+      <button id="csvBtn" class="btn ok">⬇ CSV İndir</button>
+      <button id="resetBtn" class="btn danger">🗑 Bu Dersin Yoklamasını Sıfırla</button>
+    </div>
+  </section>
+
+  <section class="card" style="padding:0;overflow:hidden">
+    <div id="tableWrap" class="scroll"></div>
+  </section>
+</main>
+
+<script src="common.js"></script>
+<script src="report.js"></script>
+</body>
+</html>

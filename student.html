@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>Öğrenci • Sesli &amp; Kriptografik QR Yoklama</title>
+<meta name="theme-color" content="#0ea5e9" />
+<link rel="manifest" href="manifest-student.json" />
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="icons/icon.svg" />
+<link rel="stylesheet" href="app.css" />
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+</head>
+<body>
+<header class="top">
+  <h1>🎓 Öğrenci</h1>
+  <a class="btn ghost sm" href="index.html">Ana Sayfa</a>
+</header>
+
+<main class="wrap">
+  <section class="card">
+    <label class="lbl" for="noInput">Öğrenci Numarası</label>
+    <input id="noInput" class="inp" inputmode="numeric" autocomplete="off" placeholder="örn. 2024001" />
+  </section>
+
+  <section class="card">
+    <div class="row">
+      <button id="listenBtn" class="btn primary">🎤 Dinlemeyi Başlat</button>
+      <span id="micStatus" class="pill">Mikrofon kapalı</span>
+    </div>
+    <div id="digits" class="digits">_ _ _ _</div>
+    <p class="muted small" id="dbg">rms: — • algılanan: —</p>
+  </section>
+
+  <section class="card center">
+    <div class="lbl">Ekrandaki Kod</div>
+    <div id="codeOut" class="bigcode">----</div>
+    <canvas id="qr" class="qr" width="280" height="280"></canvas>
+    <div id="qrInfo" class="muted small">Öğrenci numarası ve kod bekleniyor…</div>
+  </section>
+
+  <section class="card">
+    <label class="lbl" for="manual">Manuel Kod Girişi (Fallback)</label>
+    <div class="row">
+      <input id="manual" class="inp" inputmode="numeric" maxlength="4" placeholder="4 haneli kod" style="flex:1;min-width:140px" />
+      <button id="manualBtn" class="btn">Uygula</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="lbl">Günlük</div>
+    <div id="log" class="log"></div>
+  </section>
+</main>
+
+<script src="common.js"></script>
+<script src="student.js"></script>
+</body>
+</html>

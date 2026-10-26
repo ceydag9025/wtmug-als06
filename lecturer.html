@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>Hoca • Sesli &amp; Kriptografik QR Yoklama</title>
+<meta name="theme-color" content="#0ea5e9" />
+<link rel="manifest" href="manifest-lecturer.json" />
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="icons/icon.svg" />
+<link rel="stylesheet" href="app.css" />
+<script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+</head>
+<body>
+<header class="top">
+  <h1>👨‍🏫 Hoca</h1>
+  <a class="btn ghost sm" href="report.html">📊 Rapor</a>
+</header>
+
+<main class="wrap">
+  <section class="card">
+    <div class="row">
+      <div style="flex:1;min-width:150px">
+        <label class="lbl" for="courseSel">Ders</label>
+        <select id="courseSel" class="inp"></select>
+      </div>
+      <div style="width:110px">
+        <label class="lbl" for="weekSel">Hafta</label>
+        <select id="weekSel" class="inp"></select>
+      </div>
+    </div>
+  </section>
+
+  <section class="card center">
+    <div class="lbl">Yayınlanan Kod</div>
+    <div id="codeOut" class="bigcode">----</div>
+    <span id="bcastPill" class="pill">Yayın durduruldu</span>
+    <div class="row" style="justify-content:center;margin-top:12px">
+      <button id="bcastBtn" class="btn primary">▶ Yayını Başlat</button>
+    </div>
+    <p class="muted small">Her 13 saniyede yeni 4 haneli kod üretilir ve DTMF ile 2 kez yayınlanır (650 ms ton / 350 ms sessizlik).</p>
+  </section>
+
+  <section class="card">
+    <div class="row" style="justify-content:space-between">
+      <label class="row" style="gap:8px;cursor:pointer">
+        <input type="checkbox" id="autoCam" style="width:20px;height:20px" />
+        <span>Otomatik Kamera</span>
+      </label>
+      <button id="camBtn" class="btn">📷 Kamerayı Aç</button>
+    </div>
+    <video id="cam" playsinline muted></video>
+    <div id="result"></div>
+  </section>
+
+  <section class="card">
+    <div class="lbl">Günlük</div>
+    <div id="log" class="log"></div>
+  </section>
+</main>
+
+<script src="common.js"></script>
+<script src="lecturer.js"></script>
+</body>
+</html>
