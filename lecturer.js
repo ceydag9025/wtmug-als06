@@ -79,7 +79,7 @@
     const AC = window.AudioContext || window.webkitAudioContext;
     actx = new AC();
     master = actx.createGain();
-    master.gain.value = 0.6;
+    master.gain.value = 0.9;
     master.connect(actx.destination);
   }
 

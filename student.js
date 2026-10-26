@@ -14,12 +14,11 @@
   ];
 
   /* ---------- Eşikler (ince ayar buradan) ---------- */
-  const RMS_GATE = 0.0030;   // bu seviyenin altı "sessizlik"
-  const BIN_MIN = 0.0020;   // bir DTMF frekansının min genliği
-  const RATIO = 1.8;        // baskın frekans / ikinci en güçlü
-  const STABLE = 3;         // aynı rakamın kaç ölçümde üst üste gelmesi
-  const POLL_MS = 40;
-  const SEQ_GAP = 1300;     // rakamlar arası bu süreden uzun boşluk → yeni dizi
+const RMS_GATE = 0.0012;   // düşürüldü
+const BIN_MIN = 0.0006;   // düşürüldü
+const RATIO = 1.2;        // düşürüldü
+const STABLE = 2;         // 3 → 2 (daha hızlı yakalar)
+const POLL_MS = 30;       // 40 → 30 (daha sık örnek)
 
   /* ---------- DOM ---------- */
   const noInput = $('#noInput');
@@ -98,9 +97,9 @@
     }
 
     const ok = Math.min(r1, c1) > BIN_MIN && r1 > RATIO * r2 && c1 > RATIO * c2;
-    if (!ok) return { digit: null, rms, dbg: 'gürültü' };
+if (!ok) return { digit: null, rms, dbg: `zayıf (satır=${ROWS[ri]}Hz kol=${COLS[ci]}Hz güç=${r1.toFixed(4)}/${c1.toFixed(4)})` };
 
-    return { digit: KEYS[ri][ci], rms, dbg: `güçlü (${r1.toFixed(3)}/${c1.toFixed(3)})` };
+   return { digit: KEYS[ri][ci], rms, dbg: `satır=${ROWS[ri]}Hz kol=${COLS[ci]}Hz güç=${r1.toFixed(4)}/${c1.toFixed(4)} oran=${(r1/r2).toFixed(1)}/${(c1/c2).toFixed(1)}` };
   }
 
   /* ---------- Durum makinesi ---------- */
@@ -109,7 +108,7 @@
 
     if (d === null) {
       S.silence++;
-      if (S.silence >= 3) { S.pending = null; S.count = 0; S.committed = false; }
+     if (S.silence >= 8) { S.pending = null; S.count = 0; S.committed = false; }
       // yarım kalan kod → sıfırla
       if (S.digits.length > 0 && now - S.lastCommit > 1500) {
         logMsg('Yarım kalan kod sıfırlandı (' + S.digits.join('') + ')');
@@ -212,7 +211,7 @@
 
     const src = actx.createMediaStreamSource(micStream);
     analyser = actx.createAnalyser();
-    analyser.fftSize = 2048;
+    analyser.fftSize = 4096;
     analyser.smoothingTimeConstant = 0;
     src.connect(analyser);
 
